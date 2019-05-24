@@ -12,8 +12,12 @@ class SessionsController < ApplicationController
     end
 
     response_body = JSON.parse(response.body)
-    session[:token] = response_body['access_token']
 
+    set_session(response_body['access_token'])
     redirect_to('/')
+  end
+
+  def set_session(value)
+    session[:token] = value
   end
 end
