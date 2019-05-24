@@ -17,7 +17,7 @@
   }
 }
 
-input {
+input, select {
   display: block;
   box-sizing: border-box;
   margin-bottom: 15px;
@@ -26,4 +26,8 @@ input {
 
 .repo__search-terms {
   color: blue;
+}
+
+select#coding_languages {
+  height: 200px;
 }
