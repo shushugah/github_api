@@ -1,0 +1,18 @@
+<h1>Git Searching!</h1>
+<div class="">
+  <% if @repos['total_count'].positive? %>
+    You searched with the following keywords: <span class='repo__search-terms'><%=  @search_terms %>
+    </span>! Want to try another query? <%= link_to('Click here!', root_path) %>
+
+    <h2> Total number of repositories found: <%= @repos['total_count']%><h2>
+    <div class="repo__container">
+      <% @repos['items'].each do |repo| %>
+        <%= render 'repo', repo: repo %>
+      <% end %>
+    </div>
+  <% else %>
+      <h2>No repositories were found<h2>
+      Try again by clicking <%=link_to('here.', root_path) %>
+
+  <% end %>
+</div>

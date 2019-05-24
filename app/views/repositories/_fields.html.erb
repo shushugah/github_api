@@ -1,0 +1,6 @@
+<%= form_tag("/repositories/index", method: "get") do %>
+  <%= label_tag(:search_terms, "Enter one or more terms, separated by comma that the repositories must have") %>
+  <%= text_field_tag :search_terms, params[:search_terms], required: true %>
+
+  <%= submit_tag("Search") %>
+<% end %>
