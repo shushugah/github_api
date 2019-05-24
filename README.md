@@ -1,24 +1,20 @@
-# README
+# Searching Github
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+`git clone git@github.com:shushugah/github_api.git`
 
-* Ruby version
+`bundle install`
 
-* System dependencies
+Generate your own [oath token](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/)
 
-* Configuration
+## Contributions
 
-* Database creation
+Stuff this project needs help with
+- error handling
+- test coverage
+- caching of requests
 
-* Database initialization
+## License
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MIT License
