@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user
-
+  helper_method :signed_in?
 
   def authenticate_user
     redirect_to github_auth_url unless signed_in?

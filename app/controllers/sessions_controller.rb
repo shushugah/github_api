@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  skip_before_action :authenticate_user, only: :create
-
   def create
     response = Faraday.post "https://github.com/login/oauth/access_token" do |request|
       request.body = {
@@ -12,9 +10,13 @@ class SessionsController < ApplicationController
     end
 
     response_body = JSON.parse(response.body)
-
     set_session(response_body['access_token'])
     redirect_to('/')
+  end
+
+  def delete
+    reset_session
+    redirect_to(root_path)
   end
 
   def set_session(value)
